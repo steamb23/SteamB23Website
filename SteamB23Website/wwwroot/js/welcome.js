@@ -7,7 +7,7 @@
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({
         canvas,
-        alpha: true,
+        alpha: true
     });
 
     const aspectRatio = window.innerWidth / window.innerHeight;
@@ -15,12 +15,14 @@
 
     const camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 2000);
 
-    window.addEventListener("resize", (event) => {
-        const aspectRatio = window.innerWidth / window.innerHeight;
-        renderer.setDrawingBufferSize(window.innerWidth, window.innerHeight, aspectRatio);
+    var resizeObserver = new ResizeObserver(() => {
+        const aspectRatio = canvas.clientWidth / canvas.clientHeight;
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
         camera.aspect = aspectRatio;
         camera.updateProjectionMatrix();
-    });
+
+        console.log("리사이즈!");
+    }).observe(canvas);
 
     // 객체 초기화
 
