@@ -122,9 +122,19 @@ footer {
   user-select: none;
 }
 .welcome > *:not(canvas) {
-  z-index: 1;
+  z-index: 10;
 }
-.welcome .button {
+.welcome > div {
+  backdrop-filter: blur(25px);
+  padding: 2em 1em;
+}
+@media screen and (min-width: 577px) {
+  .welcome > div {
+    padding: 2em 3em;
+    border-radius: 1em;
+  }
+}
+.welcome > .button {
   margin: 10px;
 }
 
@@ -133,6 +143,17 @@ footer {
   background-color: #1a1b1e;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  filter: blur(0.2em);
+  animation: canvas-fade 2s ease 1 forwards;
+}
+@keyframes canvas-fade {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 
 .button.highlight {
