@@ -1,0 +1,58 @@
+﻿@import "_include-media.scss";
+
+body {
+    font-family: 'KoPubWorldDotum', 'KoPubWorld Dotum',sans-serif;
+    font-size: 20px;
+    word-break: keep-all;
+
+    @include media("screen", "<sm") {
+        font-size: 18px;
+    }
+}
+
+html {
+    line-height: 1.5;
+}
+
+section {
+    > div {
+        max-width: map-get($breakpoints, "lg");
+        padding: 0 .5em;
+    }
+}
+
+footer {
+    font-size: 0.8em;
+    background-color: #1a1b1e;
+    color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fullscreen {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.big {
+    font-size: 5em;
+    font-weight: bold;
+    margin: 0;
+
+    @include media("screen", "<md") {
+        font-size: 13vw;
+    }
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-top {
+    justify-content: flex-start;
+}

@@ -1,0 +1,50 @@
+﻿@mixin button-variant($color, $background, $hover-background, $active-background) {
+    background-color: $background;
+    color: $color;
+    outline: 0.25rem solid rgba($background, .0);
+
+    &:hover {
+        background-color: $hover-background;
+    }
+
+    &:active {
+        background-color: $active-background;
+    }
+
+    &:focus {
+        outline: 0.25rem solid rgba($background, .5);
+    }
+}
+
+.button {
+    line-height: 1.15;
+    margin: 0;
+    display: inline-block;
+    /*    background-color: #0063ff;
+    color: #d3d3d3;*/
+    background-color: white;
+    color: black;
+    text-decoration-line: none;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    border: none;
+    cursor: pointer;
+    outline: 0.25rem solid rgba(gray, .5);
+    transition: background-color .5s, outline .5s;
+
+    &:hover {
+        background-color: lightgrey;
+    }
+
+    &:active {
+        background-color: darkgray;
+    }
+
+    &:focus {
+        outline: 0.25rem solid rgba(gray, .5);
+    }
+}
+
+.button-blue {
+    @include button-variant(#d3d3d3, #0063ff, #0055dd, #0051d3)
+}

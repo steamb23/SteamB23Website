@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hello, World!</title>
+    <link href="~/css/normalize.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/site.min.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+    <link href="//cdn.jsdelivr.net/npm/font-kopubworld@1.0" rel="stylesheet" />
+</head>
+<body class="preload">
+
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <div>
+            <p>2022, Design by SteamB23</p>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
