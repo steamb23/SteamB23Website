@@ -1,0 +1,29 @@
+name: 도커 빌드
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 체크아웃
+      uses: actions/checkout@v2
+
+    - name: 환경 변수 설정
+      run: |
+        echo "TAG_NAME=steamb23/website" >> $GITHUB_ENV
+    - name: 도커 이미지 빌드
+      run: docker build -t ${TAG_NAME} -f "./SteamB23Website/Dockerfile" .
+      
+    - name: 도커 계정
+      run: docker login -u steamb23 -p b415a8c2-ea28-4f58-ba77-c13166156c33
+
+    - name: 도커 이미지 푸시
+      run: docker push ${TAG_NAME}
