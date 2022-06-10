@@ -56,8 +56,6 @@ function dragNav() {
             return;
         if (event.preventDefault)
             event.preventDefault();
-        if (touch)
-            touch.preventDefault();
         pos = event.clientY;
         drag = true;
     }
