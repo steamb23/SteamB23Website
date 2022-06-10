@@ -41,7 +41,7 @@
         function getUrlParams() {
             var params = {};
 
-            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+            window.location.search.replace(/[?&]+([^=&]+)=?([^&]*)/gi,
                 function(str, key, value) {
                     params[key] = value;
                 }
@@ -52,7 +52,7 @@
 
         let params = getUrlParams();
 
-        if (params.im == "pig") {
+        if (params.pig!=null) {
             let body = document.body;
             html = body.innerHTML;
             body.innerHTML = body.innerHTML.replace(/[가-힣]/g, "꿀");
