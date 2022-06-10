@@ -25,6 +25,7 @@ nav {
         transition: opacity .3s ease;
         transition: transform .5s ease;
         font-weight: bold;
+        color: inherit;
 
         &:hover {
             opacity: .8;
@@ -37,7 +38,9 @@ nav {
         }
 
         &:visited {
-            color: inherit;
+        }
+
+        &:link {
         }
 
         &.active {
