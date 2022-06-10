@@ -65,13 +65,11 @@ function dragNav() {
             return;
         if (event.preventDefault)
             event.preventDefault();
-        if (touch)
-            touch.preventDefault();
         delta = pos - event.clientY;
         pos = event.clientY;
         let targetTop = (nav.offsetTop - delta);
-        targetTop = Math.max(-nav.offsetHeight + 100, targetTop);
-        targetTop = Math.min(window.innerHeight - 100, targetTop);
+        targetTop = Math.max(window.innerHeight - nav.offsetHeight - 20, targetTop);
+        targetTop = Math.min(20, targetTop);
         nav.style.top = targetTop + "px";
         nav.style.cursor = "move";
     }
