@@ -3,7 +3,6 @@
 function lerp(a, b, t) {
     return a * (1 - t) + b * t;
 }
-
 function welcome() {
     // 캔버스 초기화
     /** @type {HTMLCanvasElement} */
@@ -111,8 +110,8 @@ function welcome() {
         var colorScale = 0.5;
         var totalElapsedTime = totalTime.getElapsedTime();
 
-        mx = lerp(mx, mx2, THREE.MathUtils.clamp(deltaTime * 4));
-        my = lerp(my, my2, THREE.MathUtils.clamp(deltaTime * 4));
+        mx = lerp(mx, mx2, THREE.MathUtils.clamp(deltaTime * 4, 0, 1));
+        my = lerp(my, my2, THREE.MathUtils.clamp(deltaTime * 4, 0, 1));
 
         camera.rotation.x = Math.sin(rx + totalElapsedTime * scale * 1.16) * 0.5 - my * 0.1;
         camera.rotation.y = Math.cos(ry + totalElapsedTime * scale * 1.12) * 0.2 - mx * 0.1;
