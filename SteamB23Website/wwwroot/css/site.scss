@@ -1,5 +1,13 @@
 @import "./site/main.scss";
 
+div.profile {
+    @include media("screen", ">md") {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 figure.profile {
 
     @include media("screen", "<md") {
@@ -13,12 +21,6 @@ figure.profile {
         width: 15em;
         border-radius: 100%;
         justify-self: center;
-
-        @include media("screen", ">md") {
-            float: left;
-        }
-
-        margin: 0 1em 1em 1em;
     }
 }
 
@@ -38,6 +40,7 @@ section:nth-child(2n+1):not(.welcome) {
         backdrop-filter: blur(2vh);
         border-radius: .5em;
         padding: 2em 1em;
+        width:auto;
 
         @include media("screen",">sm") {
             padding: 2em 3em;

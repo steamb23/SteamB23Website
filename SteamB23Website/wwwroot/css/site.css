@@ -126,6 +126,14 @@ footer {
   outline: 0.25rem solid rgba(0, 99, 255, 0.5);
 }
 
+@media screen and (min-width: 769px) {
+  div.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 @media screen and (max-width: 767px) {
   figure.profile {
     display: flex;
@@ -138,12 +146,6 @@ figure.profile img {
   width: 15em;
   border-radius: 100%;
   justify-self: center;
-  margin: 0 1em 1em 1em;
-}
-@media screen and (min-width: 769px) {
-  figure.profile img {
-    float: left;
-  }
 }
 
 section:nth-child(2n+1):not(.welcome) {
@@ -162,6 +164,7 @@ section:nth-child(2n+1):not(.welcome) {
   backdrop-filter: blur(2vh);
   border-radius: 0.5em;
   padding: 2em 1em;
+  width: auto;
 }
 @media screen and (min-width: 577px) {
   .welcome > div {
