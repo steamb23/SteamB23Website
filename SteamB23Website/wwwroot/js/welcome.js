@@ -111,8 +111,8 @@ function welcome() {
         const colorScale = 0.5;
         const totalElapsedTime = totalTime.getElapsedTime();
 
-        mx = lerp(mx, mx2, deltaTime * 4);
-        my = lerp(my, my2, deltaTime * 4);
+        mx = lerp(mx, mx2, THREE.MathUtils.clamp(deltaTime * 4));
+        my = lerp(my, my2, THREE.MathUtils.clamp(deltaTime * 4));
 
         camera.rotation.x = Math.sin(rx + totalElapsedTime * scale * 1.16) * 0.5 - my * 0.1;
         camera.rotation.y = Math.cos(ry + totalElapsedTime * scale * 1.12) * 0.2 - mx * 0.1;
