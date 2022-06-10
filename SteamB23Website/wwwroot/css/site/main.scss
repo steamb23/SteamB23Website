@@ -1,3 +1,8 @@
 ﻿@import "layout.scss";
 @import "text.scss";
 @import "button.scss";
+@import "navbar.scss";
+
+html{
+    scroll-behavior: smooth;
+}

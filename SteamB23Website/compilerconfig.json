@@ -9,5 +9,9 @@
   {
     "outputFile": "wwwroot/js/welcome.es5.js",
     "inputFile": "wwwroot/js/welcome.js"
+  },
+  {
+    "outputFile": "wwwroot/css/wecome.css",
+    "inputFile": "wwwroot/css/wecome.scss"
   }
 ]

@@ -2,7 +2,7 @@
 @using SteamB23Website.Pages.Sections
 @model IndexModel
 @{
-    Layout = "_MainLayout";
+    Layout = "_WelcomeLayout";
     ViewData["Title"] = "Home page";
     var sections = new SectionInfo[]
     {
@@ -13,9 +13,23 @@
         new("Contact"),
     };
 }
+
+<nav>
+    <div>
+        <a class="menu-open"><i class="fa-solid fa-bars"></i></a>
+    </div>
+    <ul>
+        <li class="looking"><a href="#section-welcome">TOP</a></li>
+        <li class="looking"><a href="#section-about">소개</a></li>
+        <li class="looking"><a href="#section-experience">기술 및 경험</a></li>
+        <li class="looking"><a href="#section-projects">프로젝트</a></li>
+        <li class="looking"><a href="#section-contact">연락처</a></li>
+    </ul>
+</nav>
+
 @foreach (var section in sections)
 {
-    <section class="@(section.SectionClass)">
+    <section id="section-@(section.Name.ToLower())" class="@(section.SectionClass)">
         @await Html.PartialAsync($"Sections/_{section.Name}")
     </section>
 }
