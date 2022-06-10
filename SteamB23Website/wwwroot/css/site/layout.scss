@@ -10,12 +10,18 @@ body {
     }
 }
 
+strong {
+    white-space: nowrap;
+}
+
 html {
     line-height: 1.5;
 }
 
 section {
     > div {
+        box-sizing: border-box;
+        width:100%;
         max-width: map-get($breakpoints, "lg");
         padding: 0 .5em;
     }
@@ -55,4 +61,8 @@ footer {
 
 .flex-top {
     justify-content: flex-start;
+}
+
+.row {
+    display:flex;
 }

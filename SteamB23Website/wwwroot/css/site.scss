@@ -1,5 +1,31 @@
 @import "./site/main.scss";
 
+figure.profile {
+
+    @include media("screen", "<md") {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        width: 15em;
+        border-radius: 100%;
+        justify-self: center;
+
+        @include media("screen", ">md") {
+            float: left;
+        }
+
+        margin: 0 1em 1em 1em;
+    }
+}
+
+section:nth-child(2n+1):not(.welcome) {
+    background-color: #f0f0f0;
+}
+
 .welcome {
     background-color: #1a1b1e;
     color: #d3d3d3;

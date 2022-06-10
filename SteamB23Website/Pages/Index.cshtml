@@ -8,22 +8,29 @@
 <section class="fullscreen flex welcome">
     <canvas id="welcome-canvas"></canvas>
     <div class="flex">
-    <div>
-        <p class="big text-center">
-            Hello, world!
-        </p>
-        <p>안녕하세요! 저는 <strong>맛난호빵</strong>입니다.</p>
-        <p>항상 <strong>게임 프로그래머</strong>를 꿈꾸고 있습니다.</p>
-    </div>
-    <button id="read-more-button" class="button button-blue highlight">자세히 보기</button>
+        <div>
+            <p class="big text-center">
+                Hello, world!
+            </p>
+            <p>안녕하세요! 저는 <strong>맛난호빵</strong>입니다.</p>
+            <p>항상 <strong>게임 프로그래머</strong>를 꿈꾸고 있습니다.</p>
+        </div>
+        <button id="read-more-button" class="button button-blue highlight">자세히 보기</button>
     </div>
 </section>
 <section class="flex flex-top">
     <div>
         <h1>소개</h1>
-        <p>새 인간은 없으면, 사랑의 같은 피고 이상 광야에서 아름다우냐? 이상, 위하여, 가치를 얼마나 간에 청춘 속에서 구하기 것이다. 청춘은 것이 오아이스도 따뜻한 봄바람이다. 그림자는 광야에서 끝에 같으며, 맺어, 있을 바이며, 것은 보는 교향악이다. 수 불어 더운지라 것은 말이다. 실로 무엇을 전인 고행을 고동을 설레는 무엇이 생의 철환하였는가? 아름답고 가진 못할 가장 평화스러운 보라. 그것을 이것을 많이 천고에 가치를 실현에 교향악이다. 든 하는 용기가 위하여, 길을 우리 사막이다.</p>
-        <p>피가 얼마나 이상, 말이다. 모래뿐일 트고, 보는 가는 보라. 고행을 인류의 찾아 우리 하였으며, 가장 것이다. 있으며, 바이며, 이상 가는 길지 그들의 힘있다. 그와 붙잡아 이상, 있는 자신과 우리의 없으면, 황금시대다. 날카로우나 역사를 낙원을 공자는 피부가 위하여서, 사라지지 이는 있는가? 그들은 창공에 생명을 실현에 물방아 가장 들어 속잎나고, 것이다. 공자는 주며, 그들은 설레는 이 곳으로 발휘하기 간에 것이다. 내려온 바이며, 우리의 하는 얼음에 새가 우리 때문이다.</p>
-        <p>인류의 청춘의 품으며, 만물은 커다란 곳이 실로 이것이야말로 예수는 아니다. 듣기만 무엇을 전인 노래하며 기쁘며, 우리 봄바람이다. 구할 위하여서, 얼마나 원대하고, 있으며, 있음으로써 열매를 영락과 인류의 것이다. 무엇이 가슴이 황금시대의 눈이 이상을 품으며, 더운지라 있다. 가지에 작고 할지니, 만천하의 우리의 봄날의 때까지 품었기 위하여서. 것은 천고에 피어나는 그들에게 황금시대의 방지하는 같은 동력은 두기 때문이다. 이상은 그림자는 그들의 착목한는 싹이 우리 피가 그러므로 있을 것이다. 그것을 가장 가치를 없는 있는가? 대한 인생을 얼음에 불러 가슴에 새 그들의 있는가?</p>
+        <div>
+            <figure class="profile">
+                <img src="img/profile.webp" class="profile" title="최지헌" />
+            </figure>
+            <div >
+                <p>저는 <strong>강원도 강릉</strong>에서 태어나 <strong>청강문화산업대학교</strong>에서 공부하고 졸업 예정인, 게임을 사랑하는 <strong>개발자</strong> <strong>최지헌(맛난호빵)</strong>입니다.</p>
+                <p>어릴적 부터 게임 개발자에 대해 동경을 가지고 있어 취미로 RPG 메이커를 다루었었습니다. 그러다가 고등학교에 입학하고 프로그래밍을 독학하여 본격적으로 게임 개발자가 되기 위한 길을 걸어왔습니다.</p>
+                <p><em><strong>게임 플레이</strong>부터 <strong>유저 인터페이스</strong>까지, 편안한 <strong>사용자 경험</strong>에 집중한 <strong>상호 작용</strong>을 구현하는 것에 대해서 항상 <strong>진지하게 생각</strong>하고 있습니다.</em></p>
+            </div>
+        </div>
     </div>
 </section>
 <section class="flex flex-top">
@@ -39,7 +46,7 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.141.0/build/three.min.js"></script>
     <script src="~/js/welcome.es5.min.js" defer></script>
     <script defer>
-        
+
         function readMore() {
             const viewHeight = window.innerHeight;
 
