@@ -9,9 +9,11 @@
 
     <ItemGroup>
       <Content Remove="compilerconfig.json" />
+      <Content Remove="wwwroot\js\welcome.es5.min.js" />
     </ItemGroup>
 
     <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\js\welcome.es5.min.js" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
@@ -73,6 +75,7 @@
 
     <ItemGroup>
       <None Include="compilerconfig.json" />
+      <None Include="wwwroot\js\welcome.es5.min.js" />
     </ItemGroup>
 
 </Project>

@@ -1,13 +1,5 @@
-﻿function smoothstep(edge0, edge1, x) {
-    if (x < edge0)
-        return 0;
-    if (x >= edge1)
-        return 1;
-
-    // Scale/bias into [0..1] range
-    x = (x - edge0) / (edge1 - edge0);
-
-    return x * x * (3 - 2 * x);
+﻿function lerp(a, b, t) {
+    return a * (1 - t) + b * t;
 }
 
 function welcome() {
@@ -18,9 +10,9 @@ function welcome() {
     // three 초기화
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({
-        canvas,
-        alpha: true
+        canvas
     });
+    renderer.setClearColor(0x1a1b1e);
 
     const aspectRatio = window.innerWidth / window.innerHeight;
 
@@ -39,7 +31,7 @@ function welcome() {
 
     // 객체 초기화
 
-    const light = new THREE.HemisphereLight(0xffffff, 0x080808, 1.0);
+    const light = new THREE.HemisphereLight(0xffffff, 0x1a1b1e, 1.0);
     light.position.set(- 1.25, 1, 1);
     scene.add(light);
 
@@ -94,6 +86,15 @@ function welcome() {
     let py = Math.random() * Math.PI;
     let pz = Math.random() * Math.PI;
 
+    let mx = 0;
+    let my = 0;
+    let mx2 = 0;
+    let my2 = 0;
+    window.addEventListener("mousemove", (event) => {
+        mx2 = event.clientX / window.innerWidth - 0.5;
+        my2 = event.clientY / window.innerHeight - 0.5;
+    });
+
     render();
 
     function render() {
@@ -109,8 +110,12 @@ function welcome() {
         const scale = 0.1;
         const colorScale = 0.5;
         const totalElapsedTime = totalTime.getElapsedTime();
-        camera.rotation.x = Math.sin(rx + totalElapsedTime * scale * 1.16) * 0.5;
-        camera.rotation.y = Math.cos(ry + totalElapsedTime * scale * 1.12) * 0.2;
+
+        mx = lerp(mx, mx2, deltaTime * 4);
+        my = lerp(my, my2, deltaTime * 4);
+
+        camera.rotation.x = Math.sin(rx + totalElapsedTime * scale * 1.16) * 0.5 - my * 0.1;
+        camera.rotation.y = Math.cos(ry + totalElapsedTime * scale * 1.12) * 0.2 - mx * 0.1;
         camera.rotation.z = Math.sin(rz + totalElapsedTime * scale * 1.58) * 0.2;
         camera.position.y = Math.cos(py + totalElapsedTime * scale * 0.95) * 3;
         camera.position.x = Math.sin(px + totalElapsedTime * scale * 1.24) * 2;

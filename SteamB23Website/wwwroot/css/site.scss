@@ -9,12 +9,12 @@
     }
 
     > div {
-        backdrop-filter: blur(25px);
+        backdrop-filter: blur(2vh);
+        border-radius: .5em;
         padding: 2em 1em;
 
         @include media("screen",">sm") {
             padding: 2em 3em;
-            border-radius: 1em;
         }
     }
 
@@ -31,7 +31,7 @@
     width: 100%;
     height: 100%;
     opacity: 0.0;
-    filter: blur(0.2em);
+    filter: blur(.3vh);
     animation: canvas-fade 2s ease 1 forwards;
 
     @keyframes canvas-fade {

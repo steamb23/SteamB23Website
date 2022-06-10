@@ -1,11 +1,13 @@
-[
+﻿[
   {
     "outputFile": "wwwroot/css/site.css",
     "inputFile": "wwwroot/css/site.scss",
     "minify": {
       "enabled": true
-    },
-    "sourceMap": false,
-    "useNodeSass": false
+    }
+  },
+  {
+    "outputFile": "wwwroot/js/welcome.es5.js",
+    "inputFile": "wwwroot/js/welcome.js"
   }
 ]
