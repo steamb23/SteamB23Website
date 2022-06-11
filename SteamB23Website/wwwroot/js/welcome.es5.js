@@ -126,3 +126,8 @@ function welcome() {
 
 welcome();
 
+var skillCollapse = document.querySelector(".skills.collapse");
+skillCollapse.addEventListener("click", function (event) {
+    skillCollapse.classList.toggle("show");
+});
+

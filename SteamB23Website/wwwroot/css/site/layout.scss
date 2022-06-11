@@ -64,5 +64,10 @@ footer {
 }
 
 .row {
-    display:flex;
+    display: flex;
+
+    &.center {
+        align-items: center;
+        justify-content: center;
+    }
 }

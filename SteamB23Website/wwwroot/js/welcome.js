@@ -128,3 +128,16 @@ function welcome() {
 }
 
 welcome();
+
+//let skillCollapses = document.querySelectorAll(".skills.collapse");
+//skillCollapses.forEach((skillCollapse) => {
+//    skillCollapse.addEventListener("click", (event) => {
+//        skillCollapse.classList.toggle("show");
+//    });
+//});
+////let skillCollapses = document.querySelectorAll(".skills.collapse");
+////document.querySelector(".skill-collapse").addEventListener("click", (event) => {
+////    skillCollapses.forEach((skillCollapse) => {
+////        skillCollapse.classList.toggle("show");
+////    });
+////});

@@ -1,7 +1,8 @@
 
 @import "site/_include-media.scss";
+
 div.profile {
-    @include media("screen", ">md") {
+    @include media("screen", ">=md") {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -14,7 +15,6 @@ figure.profile {
         display: flex;
         align-items: center;
         justify-content: center;
-        align-items: center;
     }
 
     img {
@@ -24,12 +24,66 @@ figure.profile {
     }
 }
 
+div.skills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-evenly;
+    gap: 1em 0;
+    padding: 1em 0;
+
+    figure {
+        margin: 0 1em;
+    }
+
+    &.collapse:not(.show) {
+        figure.skills {
+            figcaption {
+                display: none;
+            }
+        }
+    }
+}
+
+figure.skills {
+    text-align: center;
+    width: 10em;
+
+    img {
+        width: 10em;
+        height: 5em;
+        object-fit: contain;
+    }
+
+    figcaption {
+        width: 100%;
+        padding: 1em 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin:0;
+
+        li {
+            margin-top: .5em;
+        }
+    }
+
+    .good {
+        position: absolute;
+        transform: translate(-4em, 2em) scale(0.6) rotate(10deg);
+        width: auto;
+        user-select: none;
+    }
+}
+
 section:nth-child(2n):not(.welcome) {
     background-color: #f0f0f0;
 }
 
 section {
-    min-height:60vh;
+    min-height: 60vh;
 }
 
 .welcome {
@@ -40,19 +94,19 @@ section {
         z-index: 10;
     }
 
-    > div {
+    div {
         backdrop-filter: blur(2vh);
         border-radius: .5em;
         padding: 2em 1em;
-        width:auto;
+        width: auto;
 
-        @include media("screen",">sm") {
+        @include media("screen",">=sm") {
             padding: 2em 3em;
         }
     }
 
-    > .button {
-        margin: 10px;
+    .button {
+        margin: 0;
     }
 
     user-select: none;
@@ -78,7 +132,7 @@ section {
     }
 }
 
-.button.highlight {
+.highlight {
     animation-duration: 2.5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;

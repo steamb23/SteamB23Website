@@ -64,6 +64,10 @@ footer {
 .row {
   display: flex;
 }
+.row.center {
+  align-items: center;
+  justify-content: center;
+}
 
 .text-center {
   text-align: center;
@@ -87,7 +91,7 @@ footer {
 
 .button {
   line-height: 1.15;
-  margin: 0;
+  margin: 1em 0.5em;
   display: inline-block;
   /*    background-color: #0063ff;
   color: #d3d3d3;*/
@@ -113,7 +117,7 @@ footer {
 
 .button-blue {
   background-color: #0063ff;
-  color: #d3d3d3;
+  color: #ffffff;
   outline: 0.25rem solid rgba(0, 99, 255, 0);
 }
 .button-blue:hover {
@@ -178,6 +182,18 @@ nav ul {
 }
 nav.toggle ul {
   display: block;
+}
+
+.collapse:not(.show) {
+  height: 0;
+  visibility: hidden;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
 }
 
 html {
