@@ -8,7 +8,7 @@
     {
         new("Welcome", "fullscreen flex welcome"),
         new("About"),
-        new("Experience"),
+        new("Skills"),
         new("Projects"),
         new("Contact"),
     };
@@ -21,7 +21,7 @@
     <ul>
         <li class="looking"><a href="#section-welcome">TOP</a></li>
         <li class="looking"><a href="#section-about">소개</a></li>
-        <li class="looking"><a href="#section-experience">기술 및 경험</a></li>
+        <li class="looking"><a href="#section-skills">기술 및 경험</a></li>
         <li class="looking"><a href="#section-projects">프로젝트</a></li>
         <li class="looking"><a href="#section-contact">연락처</a></li>
     </ul>
@@ -61,14 +61,14 @@
             img.setAttribute("src", "img/pig.webp");
         }
 
-        function readMore() {
-            const viewHeight = window.innerHeight;
+        //function readMore() {
+        //    const viewHeight = window.innerHeight;
 
-            scrollTo({ top: viewHeight, behavior: "smooth" });
-        }
+        //    scrollTo({ top: viewHeight, behavior: "smooth" });
+        //}
 
-        document.querySelector("#read-more-button").addEventListener("click", (event) => {
-            readMore();
-        });
+        //document.querySelector("#read-more-button").addEventListener("click", (event) => {
+        //    readMore();
+        //});
     </script>
 }
