@@ -118,40 +118,11 @@ function collapse() {
                     }
                 }
             } else {
-                document.querySelector(toggleTargetSelector);
+                toggleTarget = document.querySelector(toggleTargetSelector);
             }
 
-            if (toggleTarget.classList.contains("collapse")) {
-                if (toggleTarget.classList.contains("show")) {
-                    toggleTarget.classList.remove("collapse", "show");
-                    const backupHeight = toggleTarget.style.height;
-                    toggleTarget.style.height = window.getComputedStyle(toggleTarget, null).height;
-                    window.requestAnimationFrame(() => {
-                        toggleTarget.classList.add("collapsing");
-                        toggleTarget.style.height = backupHeight;
-                        toggleTarget.addEventListener("transitionend", () => {
-                            toggleTarget.classList.remove("collapsing");
-                            toggleTarget.classList.add("collapse");
-                            toggleTarget.style.height = backupHeight;
-                        }, { once: true })
-                    });
-                } else {
-                    // 원본 크기 가져오기
-                    toggleTarget.classList.remove("collapse");
-                    const targetHeight = window.getComputedStyle(toggleTarget, null).height;
-
-                    toggleTarget.classList.add("collapsing");
-                    window.requestAnimationFrame(() => {
-                        const backupHeight = toggleTarget.style.height;
-                        toggleTarget.style.height = targetHeight;
-                        toggleTarget.addEventListener("transitionend", () => {
-                            toggleTarget.classList.remove("collapsing");
-                            toggleTarget.classList.add("collapse", "show");
-                            toggleTarget.style.height = backupHeight;
-                        }, { once: true })
-                    });
-                }
-            }
+            const bsCollapse = new bootstrap.Collapse(toggleTarget);
+            bsCollapse.toggle();
         });
     });
 }

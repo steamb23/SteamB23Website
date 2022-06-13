@@ -30,9 +30,6 @@ div.skills {
 div.skills figure {
   margin: 0 1em;
 }
-div.skills.collapse:not(.show) figure.skills figcaption {
-  display: none;
-}
 
 figure.skills {
   text-align: center;
@@ -45,7 +42,8 @@ figure.skills img {
 }
 figure.skills figcaption {
   width: 100%;
-  padding: 1em 0;
+  padding-top: 1em 0;
+  overflow: hidden;
 }
 figure.skills ul {
   list-style: none;

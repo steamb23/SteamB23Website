@@ -12,6 +12,12 @@
         new("Projects"),
         new("Contact"),
     };
+
+    if (Request.Query.ContainsKey("coffee"))
+    {
+        Response.StatusCode = StatusCodes.Status418ImATeapot;
+        ViewData["Teapot"] = true;
+    }
 }
 
 <nav>
@@ -21,7 +27,7 @@
     <ul>
         <li class="looking"><a href="#section-welcome">TOP</a></li>
         <li class="looking"><a href="#section-about">소개</a></li>
-        <li class="looking"><a href="#section-skills">기술 및 경험</a></li>
+        <li class="looking"><a href="#section-skills">기술</a></li>
         <li class="looking"><a href="#section-projects">프로젝트</a></li>
         <li class="looking"><a href="#section-contact">연락처</a></li>
     </ul>
@@ -52,23 +58,23 @@
 
         let params = getUrlParams();
 
-        if (params.pig!=null) {
+        if (params.pig != null) {
             let body = document.body;
             html = body.innerHTML;
             body.innerHTML = body.innerHTML.replace(/[가-힣]/g, "꿀");
-            
+
             let img = document.querySelector("figure.profile>img");
             img.setAttribute("src", "img/pig.webp");
         }
 
-        //function readMore() {
-        //    const viewHeight = window.innerHeight;
+                //function readMore() {
+                //    const viewHeight = window.innerHeight;
 
-        //    scrollTo({ top: viewHeight, behavior: "smooth" });
-        //}
+                //    scrollTo({ top: viewHeight, behavior: "smooth" });
+                //}
 
-        //document.querySelector("#read-more-button").addEventListener("click", (event) => {
-        //    readMore();
-        //});
+                //document.querySelector("#read-more-button").addEventListener("click", (event) => {
+                //    readMore();
+                //});
     </script>
 }

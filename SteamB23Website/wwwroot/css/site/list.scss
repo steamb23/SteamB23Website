@@ -1,0 +1,12 @@
+﻿ul.enum {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 1em;
+    flex-wrap: wrap;
+
+    &.center {
+        align-items: center;
+        justify-content: center;
+    }
+}
