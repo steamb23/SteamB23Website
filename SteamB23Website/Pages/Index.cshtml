@@ -42,39 +42,31 @@
 
 @section Scripts{
     <script src="https://cdn.jsdelivr.net/npm/three@0.141.0/build/three.min.js"></script>
-    <script src="~/js/welcome.js" defer></script>
-    <script defer>
-        function getUrlParams() {
-            var params = {};
+    <script src="~/js/welcome.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            function getUrlParams() {
+                var params = {};
 
-            window.location.search.replace(/[?&]+([^=&]+)=?([^&]*)/gi,
-                function(str, key, value) {
-                    params[key] = value;
-                }
-            );
+                window.location.search.replace(/[?&]+([^=&]+)=?([^&]*)/gi,
+                    function(str, key, value) {
+                        params[key] = value;
+                    }
+                );
 
-            return params;
-        }
+                return params;
+            }
 
-        let params = getUrlParams();
+            let params = getUrlParams();
 
-        if (params.pig != null) {
-            let body = document.body;
-            html = body.innerHTML;
-            body.innerHTML = body.innerHTML.replace(/[가-힣]/g, "꿀");
+            if (params.pig != null) {
+                let body = document.body;
+                html = body.innerHTML;
+                body.innerHTML = body.innerHTML.replace(/[가-힣]/g, "꿀");
 
-            let img = document.querySelector("figure.profile>img");
-            img.setAttribute("src", "img/pig.webp");
-        }
-
-                //function readMore() {
-                //    const viewHeight = window.innerHeight;
-
-                //    scrollTo({ top: viewHeight, behavior: "smooth" });
-                //}
-
-                //document.querySelector("#read-more-button").addEventListener("click", (event) => {
-                //    readMore();
-                //});
+                let img = document.querySelector("figure.profile>img");
+                img.setAttribute("src", "img/pig.webp");
+            }
+        });
     </script>
 }
