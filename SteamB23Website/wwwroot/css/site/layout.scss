@@ -18,10 +18,18 @@ html {
     line-height: 1.5;
 }
 
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 section {
     > div {
         box-sizing: border-box;
-        width:100%;
+        width: 100%;
         max-width: map-get($breakpoints, "lg");
         padding: 0 .5em;
     }

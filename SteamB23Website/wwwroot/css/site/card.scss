@@ -1,0 +1,23 @@
+﻿.card {
+    border-radius: .5em;
+    box-shadow: #00000040 .1em .1em .3em;
+    padding: 1em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    backdrop-filter: blur(2vh);
+
+    a & {
+        transition: background-color ease .4s, box-shadow ease .4s;
+        background-color: #00000000;
+        color: initial;
+
+        &:hover {
+            box-shadow: #00000040 .25em .25em .6em;
+            background-color: #00000010;
+        }
+    }
+
+    a:hover:has(&) {
+        text-decoration: none;
+    }
+}

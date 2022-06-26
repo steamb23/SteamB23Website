@@ -34,6 +34,10 @@ div.skills figure {
 figure.skills {
   text-align: center;
   width: 10em;
+  transition: transform ease 0.2s;
+}
+figure.skills:hover {
+  transform: scale(1.1);
 }
 figure.skills img {
   width: 10em;
@@ -58,6 +62,40 @@ figure.skills .good {
   transform: translate(-4em, 2em) scale(0.6) rotate(10deg);
   width: auto;
   user-select: none;
+}
+
+.project.card {
+  display: flex;
+  gap: 1em;
+}
+.project.card h3 {
+  margin-top: 0;
+}
+.project.card div {
+  width: 100%;
+}
+.project.card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 0.25em;
+}
+.project.card .tag {
+  font-size: 0.9em;
+  padding: 0 0.3em;
+  border-radius: 0.2em;
+  box-shadow: #00000030 0.1em 0.1em 0.3em;
+}
+@media screen and (max-width: 767px) {
+  .project.card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project.card h3 {
+    text-align: center;
+  }
+  .project.card img {
+    border-radius: 1em;
+  }
 }
 
 section:nth-child(2n):not(.welcome) {
