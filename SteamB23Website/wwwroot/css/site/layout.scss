@@ -19,10 +19,12 @@ html {
 }
 
 a {
+    color: #ff4600;
     text-decoration: none;
+    transition: color ease .5s;
 
     &:hover {
-        text-decoration: underline;
+        color: #ffaa00;
     }
 }
 
@@ -78,4 +80,9 @@ footer {
         align-items: center;
         justify-content: center;
     }
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
 }

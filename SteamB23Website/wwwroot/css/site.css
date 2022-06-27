@@ -18,10 +18,12 @@ html {
 }
 
 a {
+  color: #ff4600;
   text-decoration: none;
+  transition: color ease 0.5s;
 }
 a:hover {
-  text-decoration: underline;
+  color: #ffaa00;
 }
 
 section > div {
@@ -73,6 +75,11 @@ footer {
 }
 .row.center {
   align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
   justify-content: center;
 }
 
@@ -129,6 +136,7 @@ footer {
 }
 .button-blue:hover {
   background-color: #0055dd;
+  color: #ffffff;
 }
 .button-blue:active {
   background-color: #0051d3;
@@ -171,6 +179,7 @@ nav a:hover {
   opacity: 0.8;
   cursor: pointer;
   text-decoration: none;
+  color: inherit;
 }
 nav a:active {
   opacity: 0.5;

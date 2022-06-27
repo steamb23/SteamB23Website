@@ -1,5 +1,18 @@
-
 @import "site/_include-media.scss";
+
+.sns-list-big {
+    font-size: 3em;
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 .5em;
+}
 
 div.profile {
     @include media("screen", ">=md") {
