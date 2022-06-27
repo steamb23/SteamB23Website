@@ -10,7 +10,13 @@
         new("#",
             "img/pig.webp",
             "Lorem ipsum",
-            "피가 든 찾아다녀도, 피부가 있으며, 위하여 풀이 새 시들어 말이다. 그러므로 수 군영과 용기가 있을 것이다. 속잎나고, 갑 사랑의 찾아다녀도, 스며들어 부패뿐이다. 풍부하게 뛰노는 청춘 그러므로 봄바람이다.",
+            "같은 이상 창공에 황금시대의 위하여서. 이상의 불어 긴지라 더운지라 이상을 이것이다.",
+            "테스트", "입니다", "ㅎㅎ"
+        ),
+        new("#",
+            null,
+            "Lorem ipsum",
+            "우리 이상, 날카로우나 인간이 영락과 예가 있으랴? 속에 그들의 이상은 이것은 그들은 능히 얼마나 웅대한 이 이것이다. 할지니, 무엇이 찬미를 싸인 동력은 넣는 것이다.",
             "테스트", "입니다", "ㅎㅎ"
         ),
     };
@@ -22,7 +28,14 @@
     {
         <a href="@(item.Link)">
             <div class="project card">
-                <img src="@(item.ImageSource)" />
+                @if (item.ImageSource != null)
+                {
+                    <img class="thumbnail" src="@(item.ImageSource)" />
+                }
+                else
+                {
+                    <div class="no-thumbnail"></div>
+                }
                 <div>
                     <h3>@(item.Title)</h3>
                     <p>

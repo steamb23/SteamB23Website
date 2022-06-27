@@ -74,10 +74,20 @@ figure.skills .good {
 .project.card div {
   width: 100%;
 }
-.project.card img {
+.project.card .thumbnail, .project.card .no-thumbnail {
   width: 200px;
   height: 200px;
+  flex-shrink: 0;
   border-radius: 0.25em;
+}
+.project.card .no-thumbnail {
+  background-color: #00000010;
+  box-shadow: #00000020 0.1em 0.1em 0.5em inset;
+}
+@media screen and (max-width: 767px) {
+  .project.card .no-thumbnail {
+    display: none;
+  }
 }
 .project.card .tag {
   font-size: 0.9em;

@@ -88,10 +88,20 @@ figure.skills {
         width: 100%;
     }
 
-    img {
+    .thumbnail, .no-thumbnail {
         width: 200px;
         height: 200px;
+        flex-shrink: 0;
         border-radius: .25em;
+    }
+
+    .no-thumbnail {
+        background-color: #00000010;
+        box-shadow: #00000020 .1em .1em .5em inset;
+
+        @include media("screen", "<md") {
+            display: none;
+        }
     }
 
     .tag {
