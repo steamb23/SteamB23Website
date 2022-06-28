@@ -10,10 +10,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     const navElement = document.querySelector("nav");
+    const navMenuElement = navElement.querySelector(".menu");
     const menuOpen = navElement.querySelector(".menu-open");
     //let menuClose = navElement.querySelector(".menu-close");
-    const menuToggleEventHandler = (event) => {
-        navElement.classList.toggle("toggle");
+    const menuToggleEventHandler = (event) => {navMenuElement
+        navMenuElement.classList.toggle("toggle");
     };
     menuOpen.addEventListener("click", menuToggleEventHandler);
     //menuClose.addEventListener("click", menuToggleEventHandler);
@@ -21,8 +22,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     function nav() {
         const sections = document.querySelectorAll("section");
-        const nav = document.querySelector("nav");
-        const navLi = nav.querySelectorAll("ul li a");
+        const nav = navElement;
+        const navMenu = navMenuElement;
+        const navLi = nav.querySelectorAll("ul.section-list li a");
         window.addEventListener("scroll", (event) => {
             let current = "";
 
@@ -42,7 +44,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
 
         if (window.innerWidth > 1500) {
-            nav.classList.add("toggle");
+            navMenu.classList.add("toggle");
         }
     }
     nav();

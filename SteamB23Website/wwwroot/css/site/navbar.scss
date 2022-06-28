@@ -27,8 +27,7 @@ nav {
     a {
         display: inline-block;
         text-decoration: none;
-        transition: opacity .3s ease;
-        transition: transform .5s ease;
+        transition: opacity .3s ease, transform .5s ease;
         font-weight: bold;
         color: inherit;
 
@@ -55,6 +54,7 @@ nav {
 
         &.active {
             transform: translateX(-.5em);
+            opacity: .5;
         }
     }
 
@@ -67,17 +67,23 @@ nav {
     }
 
     ul {
-        display: none;
         transition: 1s ease;
         list-style-type: none;
         padding: 0;
         width: 10rem;
     }
 
-    &.toggle {
+    .menu {
+        display: none;
 
-        ul {
+        &.toggle {
             display: block;
         }
+    }
+
+    hr {
+        border: 0;
+        border-bottom: 1px solid white;
+        opacity: .5;
     }
 }

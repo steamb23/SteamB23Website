@@ -20,18 +20,35 @@
     }
 }
 
-<nav>
+@*<nav>
     <div>
         <a class="menu-open"><i class="fa-solid fa-bars"></i></a>
     </div>
-    <ul>
+    <ul class="section-list">
         <li class="looking"><a href="#section-welcome" class="active">TOP</a></li>
         <li class="looking"><a href="#section-about">소개</a></li>
         <li class="looking"><a href="#section-skills">기술</a></li>
         <li class="looking"><a href="#section-projects">프로젝트</a></li>
         <li class="looking"><a href="#section-contact">연락처</a></li>
     </ul>
-</nav>
+</nav>*@
+
+@{
+    var navbarModel = new Shared.NavbarModel()
+    {
+        PageLink = "/",
+        SectionInfos = new NavbarInfo[] 
+        {
+            new NavbarInfo("TOP", "#section-welcome"),
+            new NavbarInfo("소개", "#section-about"),
+            new NavbarInfo("기술", "#section-skills"),
+            new NavbarInfo("프로젝트", "#section-projects"),
+            new NavbarInfo("연락처", "#section-contact")
+        }
+    };
+}
+
+@await Html.PartialAsync("_Navbar", navbarModel)
 
 @foreach (var section in sections)
 {

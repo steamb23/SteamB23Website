@@ -170,8 +170,7 @@ nav * {
 nav a {
   display: inline-block;
   text-decoration: none;
-  transition: opacity 0.3s ease;
-  transition: transform 0.5s ease;
+  transition: opacity 0.3s ease, transform 0.5s ease;
   font-weight: bold;
   color: inherit;
 }
@@ -194,6 +193,7 @@ nav a:link {
 }
 nav a.active {
   transform: translateX(-0.5em);
+  opacity: 0.5;
 }
 nav li {
   margin-top: 0.5em;
@@ -202,14 +202,21 @@ nav .menu-open {
   font-size: 1.2em;
 }
 nav ul {
-  display: none;
   transition: 1s ease;
   list-style-type: none;
   padding: 0;
   width: 10rem;
 }
-nav.toggle ul {
+nav .menu {
+  display: none;
+}
+nav .menu.toggle {
   display: block;
+}
+nav hr {
+  border: 0;
+  border-bottom: 1px solid white;
+  opacity: 0.5;
 }
 
 .collapse:not(.show) {
@@ -255,6 +262,13 @@ a .card:hover {
 }
 a:hover:has(.card) {
   text-decoration: none;
+}
+
+.tag {
+  font-size: 0.9em;
+  padding: 0 0.3em;
+  border-radius: 0.2em;
+  box-shadow: #00000030 0.1em 0.1em 0.3em;
 }
 
 html {

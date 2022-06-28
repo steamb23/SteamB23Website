@@ -1,0 +1,27 @@
+﻿@model SteamB23Website.Pages.Shared.NavbarModel
+<nav>
+    <div>
+        <a class="menu-open"><i class="fa-solid fa-bars"></i></a>
+    </div>
+    <div class="menu">
+        <ul class="page-list">
+            @foreach (var item in Model.PageInfos)
+            {
+                bool active = item.Link == Model.PageLink;
+                <li class="looking"><a href="@(item.Link)" class="@(active ? "active" : null)">@(item.Name)</a></li>
+            }
+        </ul>
+        <hr />
+        <ul class="section-list">
+            @if (Model.SectionInfos != null)
+            {
+                var first = true;
+                @foreach (var item in Model.SectionInfos)
+                {
+                    <li class="looking"><a href="@(item.Link)" class="@(first ? "active" : null)">@(item.Name)</a></li>
+                    first = false;
+                }
+            }
+        </ul>
+    </div>
+</nav>
