@@ -3,6 +3,29 @@
 
 // Write your JavaScript code.
 
+loaded = false;
+
+// 로딩 지연
+setTimeout(() => {
+    if (!loaded) {
+        let delayedLoadMessage = document.querySelector("#delayed-load");
+        delayedLoadMessage.style.display = null;
+    }
+}, 5000);
+
+window.addEventListener("load", () => {
+    loaded = true;
+
+    let delayedLoadMessage = document.querySelector("#delayed-load");
+    delayedLoadMessage.style.display = "none";
+
+    let head = document.querySelector("head");
+    let font = document.createElement("link");
+    font.href = "//cdn.jsdelivr.net/npm/font-kopubworld@1.0";
+    font.rel = "stylesheet";
+    head.appendChild(font);
+});
+
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOMContentLoaded.");
     document.querySelectorAll(".preload").forEach((item, i, list) => {
@@ -13,7 +36,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const navMenuElement = navElement.querySelector(".menu");
     const menuOpen = navElement.querySelector(".menu-open");
     //let menuClose = navElement.querySelector(".menu-close");
-    const menuToggleEventHandler = (event) => {navMenuElement
+    const menuToggleEventHandler = (event) => {
+        navMenuElement
         navMenuElement.classList.toggle("toggle");
     };
     menuOpen.addEventListener("click", menuToggleEventHandler);

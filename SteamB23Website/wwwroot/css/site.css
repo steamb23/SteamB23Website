@@ -274,3 +274,14 @@ a:hover:has(.card) {
 html {
   scroll-behavior: smooth;
 }
+
+#delayed-load {
+  position: fixed;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background-color: yellow;
+  color: black;
+  text-align: center;
+}
